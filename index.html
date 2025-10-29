@@ -107,7 +107,7 @@
   </nav>
 
   <section id="home">
-    <h2>Üdvözlünk a boszorkányok éjszakáján!</h2>
+    <h2>Üdvözlünk a rémségek éjszakáján!</h2>
     <p>Csak még egy kis türelem... az este hamarosan elérkezik!</p>
     <div id="countdown"></div>
   </section>
@@ -120,7 +120,7 @@
       <button onclick="checkMapPassword()">Belépés</button>
     </div>
     <div id="mapContent" style="display:none;">
-      <p>A kék tökkel jelölt házak 17:00 és 19:00 között, a narancssárga tökkel jelölt címek 17:00 és 20:00 között fogadják a gyerekeket.</p>
+      <p>A kék tökkel jelölt házak 17:00 és 19:00 között, a narancssárga tökkel jelölt címek 17:00 és 20:00 között fogadják a gyerekeket. Figyeljétek a térképen a jelzéseket. Vannak olyan címek, ahol többen is fogadnak gyerekeket. Ha rákattintasz a tökre, több infót is találhatsz a címről.</p>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1a2w-TQeW9PkZFH2fuD-ugUCCuNueqV8&ehbc=2E312F"></iframe>
     </div>
   </section>
@@ -185,26 +185,29 @@
     </div>
 
     <div id="groupContent" style="display:none;">
+      17:00-kor - 3 helyszínről indulnak csoportok. Minden jelentkezőt beosztottunk egy csoportba. A csoportok beosztását e-mailben fogjuk elküldeni. Természetesen ez nem kötelező, egyénileg is lehet indulni! :)
+      
       <p><strong>17:00-kor indul:</strong></p>
       <p>1-es csoport a Csíki Pihenőtől</p>
-      <p>2-es csoport xy utcából</p>
-      <p>3-as csoport xyz helyről</p>
-
-      <p><strong>17:30-kor indul:</strong></p>
-      <p>4-es csoport a Csíki Pihenőtől</p>
-      <p>5-ös csoport xy utcából</p>
-      <p>6-os csoport xyz helyről</p>
+      <p>2-es csoport a Zsálya utcából</p>
+      <p>3-as csoport Írisz utca-Törökugrató utca sarok felől</p>
     </div>
   </section>
 
   <section id="info">
     <h2>📜 Fontos információk</h2>
-    <p>Itt találod majd a részletes programot, szabályokat és egyéb tudnivalókat.</p>
+    <p>⚠️ Szabályok – a közös élményért és biztonságért</p>
+    <p>A gyerekek felnőtt kísérettel jöjjenek!</p>
+    <p>Ajánlott a fényvisszaverő pánt/ruha!</p>
+    <p>A szülők felelőssége a biztonságos közlekedés és a gyermekük felügyelete!</p>
+    <p>A fogadó házaknál legyen otthon valaki, aki személyesen várja a gyerekeket és kéri a varázsigét!</p>
+    <p>Az édességek egyenként csomagoltak legyenek. A szülők felelőssége figyelni az allergénekre, illetve arra, hogy mit fogyaszthat a gyermekük.</p>
+    <p>Kérlek, hogy ne szemeteljetek!</p>
   </section>
 
   <section id="getPassword">
-    <h2>🔑 Kérd a jelmondatod!</h2>
-    <p>Add meg az email címedet:</p>
+    <h2>🔑 Kérd a varázsigéd!</h2>
+    <p>Add meg az email címedet (kis betűkkel):</p>
     <input type="text" id="emailInput" placeholder="Email címed..." />
     <button onclick="getMagicPhrase()">Küldés</button>
     <p id="magicPhrase" style="margin-top:1rem; font-weight:bold;"></p>
@@ -271,13 +274,13 @@
     // Email alapú jelmondat
     const emailData = {
       "hedi.debeljak@gmail.com": "Csillag ragyog, füst kavarog, ha csoki nincs, nem maradok.",
-      "Vivienhubay42@gmail.com": "Szellem suhan, boszi kacag, csokiért jött a csapat!",
-      "Laura.Jutasi@gmail.com": "Köd gomolyog, hold nevet, adj egy csokit, és megyek!",
+      "vivienhubay42@gmail.com": "Szellem suhan, boszi kacag, csokiért jött a csapat!",
+      "laura.jutasi@gmail.com": "Köd gomolyog, hold nevet, adj egy csokit, és megyek!",
       "orsi@sarossyek.hu": "Banya rázza üstjét szépen, csoki jár a varázsnépnek!",
       "kokaveczvn@gmail.com": "Kopogtat a denevér, édességért jöttem én!",
       "tancsics.kriszti@gmail.com": "Süvíts szél és kavarogj, csokiból most ide adj!",
       "zsuzsannavecsei@yahoo.com": "Trükk és móka, kacagás, csoki nélkül jön a csalás.",
-      "Maja.klobb@gmail.com": "Kísértet jár, s a hold kerek, édességet kérnek a gyerekek!",
+      "maja.klobb@gmail.com": "Kísértet jár, s a hold kerek, édességet kérnek a gyerekek!",
       "rebarbara.ruha@gmail.com": "Kopogok és nevetek, édességet keresek!",
       "budaorsbors18@gmail.com": "Szél süvít és seprű száll, csokit kérek, ez nem csalás!",
       "fulepanna@gmail.com": "Pici boszi, nagy kalap, csokit kér, s már tovább halad!",
@@ -294,19 +297,26 @@
       "domieszti@yahoo.com": "Csillag ragyog, hold nevet, csokit kér most minden gyerek!",
       "gyongyver.csuka@hotmail.com": "Pókháló leng, bagoly huhog, csoki nélkül nem mozdulok!",
       "livia.megyesi@gmail.com": "Ködben járunk, lámpást viszünk, ha nincs csoki, trükköt viszünk!",
-      "Rita.rikopet@gmail.com": "Boszi mondja, halkan súgja: “Csokit adj, vagy jön a trükk ma!”",
-      "Zsuzsa.sandor@yahoo.com": "Csiri-biri, csiri-bumm, csokit kérünk vagy csalunk!",
+      "rita.rikopet@gmail.com": "Boszi mondja, halkan súgja: “Csokit adj, vagy jön a trükk ma!”",
+      "zsuzsa.sandor@yahoo.com": "Csiri-biri, csiri-bumm, csokit kérünk vagy csalunk!",
       "novakbea@gmail.com": "Hókusz-pókusz, száll a szél, csokit kér most minden rém!",
-      "kerepesijudit@gmail.com": "Csiribá-csiribű, csoki nélkül elbújunk!",
+      "kerepesijudit@gmail.com": "Tök világít, boszi kacsint, csokit vagy csalni jöttünk megint!",
       "kofalviandi@gmail.com": "Abrakadabra, gyertyafény, csoki nélkül nincs remény!",
       "stadlerzentai.kati@gmail.com": "Abrakadabra, tök nevet, adj egy csokit, és elmegyek!",
-      "luca.tabor@gmail.com": "Csiribá–csiribú, jön a csapat, ha nincs édesség, tovább szalad!",
+      "luca.tabor@gmail.com": "Szellem jár a kertek alatt, nem bánt senkit, csak kacagtat.",
       "dihen.anita@gmail.com": "Csiribú–csiribá, zörög az ág, Halloween éjjelén csokit vár a világ!",
-      "csatar.zsofi@gmail.com": "Tátika utca 10., 2. ajtó - Holdfény csillan, pókháló remeg, ha adsz egy csokit, barát leszek.",
+      "csatar.zsofi@gmail.com": "Holdfény csillan, pókháló remeg, ha adsz egy csokit, barát leszek.",
       "lunczer@gmail.com": "Tök világít, boszi kacsint, csokit vagy csalni jöttünk megint!",
-      "Zimanyieszter@gmail.com": "Láng lobban, sötét az éj, Halloween jött, ne félj, ne félj!",
+      "zimanyieszter@gmail.com": "Láng lobban, sötét az éj, Halloween jött, ne félj, ne félj!",
       "odorkata80@gmail.com": "Boszorkány száll, seprű suhan, csokit kérek, gyorsan-gyorsan!",
       "dr.lamboy.lilla@gmail.com": "Éj szele fúj, gyertyafény ég, csokit kér a kis manó nép!",
+      "bernuszsofi@yahoo.com": "Csiribá-csiribú, csoki nélkül elbújunk!",
+      "richardradovics@gmail.com": "Éj szele fúj, gyertyafény ég, csokit kér a kis manó nép!",
+      "beresreka@yahoo.com": "Csillag ragyog fenn az égen, boszorkány száll hűvös szélben!",
+      "csifazekas@gmail.com": "Szellem suttog, hold ragyog, ma éjjel mindent elvarázsolok!",
+      "szephegyizs@yahoo.com": "Csiribá–csiribú, jön a csapat, ha nincs édesség, tovább szalad!",
+      "divinyi.edina@gmail.com": "Árnyak járnak az utcákon, táncol a hold az égbolton!",
+      "banyaibea12@gmail.com": "Ketyeg az óra, közel az éj, indul a varázslat, gyere, ne félj!",
       "zsuzsa.boros@gmail.com": "Szellem súgja: itt a trükk, ha nincs édesség, lesz nagy zűr!"
     };
 
@@ -323,3 +333,4 @@
   </script>
 </body>
 </html>
+
