@@ -177,15 +177,23 @@
 
   <section id="groups">
     <h2>🕯️ Csoportok és indulási pontok</h2>
-    <p><strong>17:00-kor indul:</strong></p>
-    <p>1-es csoport a Csíki Pihenőtől</p>
-    <p>2-es csoport xy utcából</p>
-    <p>3-as csoport xyz helyről</p>
+    <div id="groupLogin">
+      <p>Add meg a jelszót az indulási információk megtekintéséhez:</p>
+      <input type="password" id="groupPassword" placeholder="Jelszó..." />
+      <button onclick="checkGroupPassword()">Belépés</button>
+    </div>
 
-    <p><strong>17:30-kor indul:</strong></p>
-    <p>4-es csoport a Csíki Pihenőtől</p>
-    <p>5-ös csoport xy utcából</p>
-    <p>6-os csoport xyz helyről</p>
+    <div id="groupContent" style="display:none;">
+      <p><strong>17:00-kor indul:</strong></p>
+      <p>1-es csoport a Csíki Pihenőtől</p>
+      <p>2-es csoport xy utcából</p>
+      <p>3-as csoport xyz helyről</p>
+
+      <p><strong>17:30-kor indul:</strong></p>
+      <p>4-es csoport a Csíki Pihenőtől</p>
+      <p>5-ös csoport xy utcából</p>
+      <p>6-os csoport xyz helyről</p>
+    </div>
   </section>
 
   <section id="info">
@@ -239,6 +247,18 @@
         alert("Hibás jelszó!");
       }
     }
+
+    // Jelszó ellenőrzés - csoportok
+    function checkGroupPassword() {
+      const input = document.getElementById("groupPassword").value;
+      if (input === "2025halloween") {
+        document.getElementById("groupLogin").style.display = "none";
+        document.getElementById("groupContent").style.display = "block";
+      } else {
+        alert("Hibás jelszó!");
+      }
+    }
   </script>
 </body>
 </html>
+
